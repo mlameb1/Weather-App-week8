@@ -39,7 +39,8 @@ h3.innerHTML = `${day}, ${date} ${month} ${year}`;
 
 h4.innerHTML = `${hours}:${minutes}`;
 
-function formatDay(timestamp) {let date = new Date(timestamp* 1000);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
 let day = date.getDay();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 return days[day];}
@@ -96,7 +97,7 @@ function showWeather(response) {
   wind.innerHTML = `Wind speed: ${Math.round(response.data.wind.speed)} km/h`;
   h3.innerHTML = `${day}, ${date} ${month} ${year}`;
   h4.innerHTML = `${hours}:${minutes}`;
-
+getForecast(response.data.coordinates);
   
 }
 
